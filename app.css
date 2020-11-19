@@ -7,13 +7,18 @@
   *
 */
 
+main{
+margin:10px;
+border-style: solid;
+}
 h1 {
   text-align: center;
-  background-color: gray;
-  padding: 20px;
-  margin: auto;
-
+  background-color: lightgray;
+  padding: 30px;
+  margin: 10px;
 }
+
+
 
 .mainPage{
   text-align: center;
@@ -32,8 +37,46 @@ p{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin-bottom: 0;
+}
+
+.wrongAnswer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  padding:0;
+  background-color: lightgray;
+  margin: 10px;
 }
 
 button{
   margin-top: 10px;
+}
+
+#question{
+  text-align: center;
+}
+
+
+.wrong{
+  font-size: 25px;
+  margin-top: 13px;
+}
+
+.correct{
+  font-size: 25px;
+  margin-top: 13px;
+}
+
+button{
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+
+
+.qPagePhoto{
+  size: 10%;
 }
