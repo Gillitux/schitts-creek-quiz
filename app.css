@@ -13,18 +13,21 @@ main{
   justify-content: center;
   flex-direction: column;
   border-style: solid;
-  margin: 10px 100px 0 100px;
 }
 
-h1{
-  background-color: lightgray;
-  padding: 30px;
-  margin: 10px;
-}
 
 header{
   display: flex;
   justify-content: center;
+}
+
+h1{
+  display: flex;
+  background-color: lightgray;
+  justify-content: center;  
+  margin-right: 20px;
+  padding: 10px;
+  font-size: 45px;
 }
 
 .mainPage{
@@ -34,6 +37,10 @@ header{
 
 h2{
   text-align: center;
+}
+
+h3{
+  padding: 10px;
 }
 
 p{
@@ -95,4 +102,8 @@ button{
 .correct{
   font-size: 25px;
   margin-top: 13px;
+}
+
+.questionPicture{
+width: 20%
 }

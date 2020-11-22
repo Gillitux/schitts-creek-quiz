@@ -91,7 +91,7 @@ function generateQuestionPage(){
   
   return `<div class="scoreCurrent">
   <h3>Score ${store.score} of ${store.questionNumber}</h3>
-  <img src="https://media.giphy.com/media/YobpKxJJB5fOfSMW8x/giphy.gif" alt "Johnny Question" width=150px;  class="questionPicture">
+  <img src="https://media.giphy.com/media/YobpKxJJB5fOfSMW8x/giphy.gif" alt "Johnny Question";  class="questionPicture">
   <h3> Question ${store.questionNumber+1} of 5</h3>
   </div>
   <div class="mainPage">
