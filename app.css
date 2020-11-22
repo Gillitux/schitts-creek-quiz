@@ -59,6 +59,10 @@ p{
   margin: auto;
 }
 
+.questionPicture{
+  width: 30%;
+}
+
 button{
   width: 20%;
   align-self: center;
