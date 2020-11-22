@@ -128,13 +128,12 @@ function generateIncorrectPage(){
   <h3 class="wrong">WRONG!</h3> 
   <h3> Question ${store.questionNumber+1} of 5</h3>
   </div>
+  <img src="https://media.giphy.com/media/3o84TVK3ahgqYNjZzq/giphy.gif" alt="Wrong Answer" class="picture"><br>
+  <div class="mainPage">
+  <h2>${question.question}</h2>
   <div class="wrongAnswer">
   <h2>It's obviously ${correctAnswer}</h2>
   </div>
-  <div class="mainPage">
-  <h2>${question.question}</h2>
-
-  <img src="https://media.giphy.com/media/3o84TVK3ahgqYNjZzq/giphy.gif" alt="Wrong Answer" class="picture"><br>
   <button id="nextQuestion">Next Question</button>
   </div>`;
 }
