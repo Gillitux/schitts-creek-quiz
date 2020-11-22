@@ -120,6 +120,10 @@ button{
   margin-top: 6px;
 }
 
+.finalPicture{
+  margin-top: 10px;
+}
+
 @media all and (min-width: 600px){
   h3{
     font-size: 20px;

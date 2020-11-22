@@ -145,7 +145,7 @@ function generateIncorrectPage(){
 
 function generateFinal(){
   return `<div class="mainPage">
-  <img src="https://media.giphy.com/media/3og0ItP017re6GfeP6/giphy.gif" alt="Alexis Graduating" class="picture">
+  <img src="https://media.giphy.com/media/3og0ItP017re6GfeP6/giphy.gif" alt="Alexis Graduating" class="picture finalPicture">
   <div class="wrongAnswer">
   <h2>Final score: ${store.score}</h2>
   </div>
