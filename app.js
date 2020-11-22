@@ -115,7 +115,7 @@ function generateCorrectPage(){
   <h3> Question ${store.questionNumber+1} of 5</h3>
   </div>
   <h2>${question.question}</h2>
-  <img src="https://media.giphy.com/media/l4FGq1RrgxMPSqCE8/giphy.gif" alt="Shocked and Impressed" class="picture"  class="picture"><br>
+  <img src="https://media.giphy.com/media/l4FGq1RrgxMPSqCE8/giphy.gif" alt="Shocked and Impressed" class="picture"><br>
   
   <button id="nextQuestion">Next Question</button>`;
 }

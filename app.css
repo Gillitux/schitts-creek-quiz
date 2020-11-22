@@ -14,33 +14,33 @@ main{
   flex-direction: column;
   border-style: solid;
   margin: 0 10px 10px 10px;
+  font-family: 'Lora', serif;
 }
 
 
 header{
   display: flex;
   justify-content: center;
+  font-family: 'Lora', serif;
 }
 
 h1{
   display: flex;
   background-color: lightgray;
   justify-content: center;  
-  padding: 10px;
-  font-size: 45px;
-}
-
-.mainPage{
+  padding: 30px;
   display: flex;
   flex-direction: column;
 }
 
 h2{
   text-align: center;
+  margin-top: 0;
 }
 
 h3{
   padding: 10px;
+  font-size: 90%;
 }
 
 p{
@@ -59,8 +59,12 @@ p{
   margin: auto;
 }
 
-button{
+.questionPicture{
   width: 20%;
+}
+
+button{
+  width: 25%;
   align-self: center;
   border-radius: 10px;
   margin: 10px 0 10px 0;
@@ -73,6 +77,7 @@ button{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
 }
 
 .radio-buttons{
