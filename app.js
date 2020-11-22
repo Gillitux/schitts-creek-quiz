@@ -110,7 +110,7 @@ function generateCorrectPage(){
   let question = store.questions[store.questionNumber];
   return `<div class="mainPage">
   <div class="scoreCurrent">
-  <h3>Score ${store.score+1} of ${store.questionNumber+1}</h3>
+  <h3>Score ${store.score} of ${store.questionNumber+1}</h3>
   <h3 class="correct">Correct!</h3>
   <h3> Question ${store.questionNumber+1} of 5</h3>
   </div>

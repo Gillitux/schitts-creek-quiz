@@ -56,6 +56,7 @@ p{
 .picture{
   width: 30%;
   align-self: center;
+  margin: auto;
 }
 
 button{
