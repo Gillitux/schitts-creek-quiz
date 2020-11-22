@@ -7,6 +7,9 @@
   *
 */
 
+body{
+  background-color: lightgray;
+}
 
 main{
   display: flex;
@@ -15,6 +18,7 @@ main{
   border-style: solid;
   margin: 0 15px 15px 15px;
   font-family: 'Lora', serif;
+  background: #f6f6f696;
 }
 
 
@@ -26,7 +30,6 @@ header{
 
 h1{
   display: flex;
-  background-color: lightgray;
   justify-content: center;  
   padding: 30px;
   display: flex;
@@ -35,11 +38,12 @@ h1{
   border: solid;
   width: 100%;
   margin: 15px;
+  background: #f6f6f696;
 }
 
 h2{
   text-align: center;
-  margin-top: 0;
+  margin-top: 5px;
 }
 
 h3{
@@ -114,4 +118,10 @@ button{
 .correct{
   font-size: 25px;
   margin-top: 6px;
+}
+
+@media all and (min-width: 600px){
+  h3{
+    font-size: 20px;
+  }
 }
