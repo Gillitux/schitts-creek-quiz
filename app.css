@@ -13,6 +13,7 @@ main{
   justify-content: center;
   flex-direction: column;
   border-style: solid;
+  margin: 0 10px 10px 10px;
 }
 
 
@@ -25,7 +26,6 @@ h1{
   display: flex;
   background-color: lightgray;
   justify-content: center;  
-  margin-right: 20px;
   padding: 10px;
   font-size: 45px;
 }
@@ -54,7 +54,7 @@ p{
 }
 
 .picture{
-  width: 40%;
+  width: 30%;
   align-self: center;
 }
 
