@@ -58,7 +58,8 @@ const store = {
   ],
   quizStarted: false,
   questionNumber: 0,
-  score: 0
+  score: 0,
+  currentView: 'landing'
 };
 
 
@@ -66,7 +67,7 @@ const store = {
 function generateWelcomePage(){
   return `<div class="mainPage">
   <h2>How well do you know Schitt's Creek?</h2>
-  <img src="https://media.giphy.com/media/3ohzdTN61oIJCmqxLa/giphy.gif" alt="Pep Talk">
+  <img src="https://media.giphy.com/media/3ohzdTN61oIJCmqxLa/giphy.gif" alt="Pep Talk"  class="picture">
   <p>Take the quiz and find out!</p>
   <button id="startQuiz">Start Quiz</button>
  </div>`;
@@ -78,15 +79,19 @@ function generateWelcomePage(){
 function generateQuestionPage(){
   let question = store.questions[store.questionNumber];
   let answer = question.answers.map((answer,idx)=>{
-    if(idx===0){return `<input type="radio" id="answer${idx}" name="answer" value="${answer}" required> 
-    <label for="answer${idx}">${answer}</label><br>`;}
-    return `<input type="radio" id="answer${idx}" name="answer" value="${answer}" required>
-    <label for="answer${idx}">${answer}</label><br>`;
+    /*if(idx===0){
+      return `<input type="radio" id="answer${idx}" name="answer" value="${answer}" required> 
+      <label for="answer${idx}">${answer}</label><br>`;
+    }*/
+    return `<div class="radio-buttons">
+    <input type="radio" id="answer${idx}" name="answer" value="${answer}" required>
+    <label for="answer${idx}">${answer}</label><br>
+    </div>`;
   });
   
   return `<div class="scoreCurrent">
   <h3>Score ${store.score} of ${store.questionNumber}</h3>
-  <img src="https://media.giphy.com/media/YobpKxJJB5fOfSMW8x/giphy.gif" alt "Johnny Question" width=150px;>
+  <img src="https://media.giphy.com/media/YobpKxJJB5fOfSMW8x/giphy.gif" alt "Johnny Question" width=150px;  class="questionPicture">
   <h3> Question ${store.questionNumber+1} of 5</h3>
   </div>
   <div class="mainPage">
@@ -110,7 +115,7 @@ function generateCorrectPage(){
   <h3> Question ${store.questionNumber+1} of 5</h3>
   </div>
   <h2>${question.question}</h2>
-  <img src="https://media.giphy.com/media/l4FGq1RrgxMPSqCE8/giphy.gif" alt="Shocked and Impressed" class="picture"><br>
+  <img src="https://media.giphy.com/media/l4FGq1RrgxMPSqCE8/giphy.gif" alt="Shocked and Impressed" class="picture"  class="picture"><br>
   
   <button id="nextQuestion">Next Question</button>`;
 }
@@ -137,7 +142,7 @@ function generateIncorrectPage(){
 
 function generateFinal(){
   return `<div class="mainPage">
-  <img src="https://media.giphy.com/media/3og0ItP017re6GfeP6/giphy.gif" alt="Alexis Graduating">
+  <img src="https://media.giphy.com/media/3og0ItP017re6GfeP6/giphy.gif" alt="Alexis Graduating" class="picture">
   <div class="wrongAnswer">
   <h2>Final score: ${store.score}</h2>
   </div>
@@ -148,30 +153,34 @@ function generateFinal(){
 
 function handleQuizStart(){
   $('main').on('click', '#startQuiz', function (event){
-    store.quizStarted=true;
+    store.currentView='questions';
     renderQuiz();
   });
 }
 
 
 function handleSubmit(){
-  $('main').on('submit', '#question', function(){
+  $('main').on('submit', '#question', function(event){
     event.preventDefault();
     let chosenAnswer=$('input[name="answer"]:checked').val();
     let correctAnswer = store.questions[store.questionNumber].correctAnswer;
     //conditional for what will happen when button is pressed
     if (chosenAnswer === correctAnswer){
-      $('main').html(generateCorrectPage());
+      store.currentView='correct';
       store.score++;
     } else {
-      $('main').html(generateIncorrectPage());
+      store.currentView='incorrect';
     }
+    renderQuiz();
   });
 }
+
+
 
 function handleNextQuestion(){
   $('main').on('click', '#nextQuestion', function(){
     store.questionNumber++;
+    store.currentView = 'questions';
     renderQuiz();
   });
 }
@@ -209,6 +218,7 @@ function handleRestart(){
     store.quizStarted=false;
     store.questionNumber=0;
     store.score=0;
+    store.currentView = 'landing';
     renderQuiz();
   });
 }
@@ -242,13 +252,22 @@ function handleRestart(){
 
 function renderQuiz(){
   let html= '';
-  if (store.quizStarted){
-    if(store.questionNumber===store.questions.length){
-      html= generateFinal();
+  if (store.currentView !== 'landing'){
+    if (store.currentView === 'incorrect'){
+      html=generateIncorrectPage();
     }
-    else{
-      html = generateQuestionPage();
+    else if (store.currentView === 'correct'){
+      html=generateCorrectPage();
     }
+    else if (store.currentView === 'questions'){
+      if(store.questionNumber===store.questions.length){
+        html= generateFinal();
+      }
+      else{
+        html = generateQuestionPage();
+      }
+    }
+    
   } 
   else { 
     html = generateWelcomePage();
